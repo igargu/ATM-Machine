@@ -5,110 +5,106 @@ using namespace std;
 
 int main() {
 
-	int option, deposit, withdraw, balance = 1000;
+  int option, deposit, withdraw, balance = 1000;
 
-	cout << " -- ATM STARTED -- " << endl << endl;
+  cout << " -- ATM STARTED -- " << endl << endl;
 
-	do {
+  do {
 
-		cout << "Choose an option: " << endl << endl
-			<< "1. Deposit money" << endl
-			<< "2. Withdraw money" << endl
-			<< "3. Check balance" << endl
-			<< "4. Exit" << endl << endl;
+    cout << "Choose an option: " << endl << endl <<
+      "1. Deposit money" << endl <<
+      "2. Withdraw money" << endl <<
+      "3. Check balance" << endl <<
+      "4. Exit" << endl << endl;
 
-		if (!(cin >> option)) {
+    if (!(cin >> option)) {
 
-			cout << endl;
-			cin.clear();
-			cin.ignore();
-			cout << "Enter a valid option" << endl;
+      cout << endl;
+      cin.clear();
+      cin.ignore();
+      cout << "Enter a valid option" << endl;
 
-		}
-		else {
+    } else {
 
-			cout << endl;
+      cout << endl;
 
-			switch (option) {
+      switch (option) {
 
-			case 1:
+      case 1:
 
-				cout << "How much money do you want to deposit?" << endl << endl;
+        cout << "How much money do you want to deposit?" << endl << endl;
 
-				if (!(cin >> deposit)) {
+        if (!(cin >> deposit)) {
 
-					cout << endl;
-					cin.clear();
-					cin.ignore();
-					cout << "You have to enter an integer" << endl;
+          cout << endl;
+          cin.clear();
+          cin.ignore();
+          cout << "You have to enter an integer" << endl;
 
-				}
-				else {
+        } else {
 
-					balance = balance + deposit;
+          balance = balance + deposit;
 
-					cout << endl << "$" << deposit << " deposited" << endl;
-					cout << endl << "Your current balance is: $" << balance << endl;
+          cout << endl << "$" << deposit << " deposited" << endl;
+          cout << endl << "Your current balance is: $" << balance << endl;
 
-				}
+        }
 
-				break;
+        break;
 
-			case 2:
+      case 2:
 
-				cout << "How much money do you want to withdraw?" << endl << endl;
+        cout << "How much money do you want to withdraw?" << endl << endl;
 
-				if (!(cin >> withdraw)) {
+        if (!(cin >> withdraw)) {
 
-					cout << endl;
-					cin.clear();
-					cin.ignore();
-					cout << "You have to enter an integer" << endl;
+          cout << endl;
+          cin.clear();
+          cin.ignore();
+          cout << "You have to enter an integer" << endl;
 
-				}
-				else {
+        } else {
 
-					if (withdraw > balance) {
+          if (withdraw > balance) {
 
-						cout << endl << "You do not have this amount of balance to withdraw" << endl;
+            cout << endl << "You do not have this amount of balance to withdraw" << endl;
 
-					}
-					else if (withdraw < balance) {
+          } else if (withdraw < balance) {
 
-						cout << endl << "$" << withdraw << " withdrawn" << endl;
-						balance = balance - withdraw;
-						cout << endl << "Your current balance is: $" << balance << endl;
+            cout << endl << "$" << withdraw << " withdrawn" << endl;
+            balance = balance - withdraw;
+            cout << endl << "Your current balance is: $" << balance << endl;
 
-					}
+          }
 
-				}
+        }
 
-				break;
+        break;
 
-			case 3:
+      case 3:
 
-				cout << "Your current balance is: $" << balance << endl;
+        cout << "Your current balance is: $" << balance << endl;
 
-				break;
+        break;
 
-			case 4:
+      case 4:
 
-				cout << " -- FINISHED ATM -- " << endl;
+        cout << " -- FINISHED ATM -- " << endl;
 
-				break;
+        break;
 
-			default:
+      default:
 
-				cout << "Enter a valid option" << endl;
+        cout << "Enter a valid option" << endl;
 
-			}
+      }
 
-		}
+    }
 
-		cout << endl;
+    cout << endl;
 
-	} while (option != 4);
+  } while (option != 4);
 
-	return 0;
+  return 0;
 
 }
